@@ -16,14 +16,23 @@
             justify-content: center;
             height: 100vh;
             overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
         }
         h1 {
             text-shadow: 0 0 10px rgba(0,255,204,0.5);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         p {
             color: #8892b0;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+        }
+        canvas {
+            background: #121629;
+            border: 2px solid #00ffcc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0,255,204,0.15);
         }
         .pad-container {
             display: grid;
@@ -36,7 +45,7 @@
             border: 2px solid #00ffcc;
             border-radius: 12px;
             cursor: pointer;
-            transition: all 0.1s ease;
+            transition: transform 0.05s ease, background 0.05s ease;
             box-shadow: 0 0 15px rgba(0,255,204,0.1);
         }
         .pad:hover {
@@ -45,22 +54,24 @@
         }
         .pad:active, .pad.active {
             background: #00ffcc;
-            transform: scale(0.95);
+            transform: scale(0.92);
         }
     </style>
 </head>
 <body>
 
     <h1>NEON SYNTH LAB</h1>
-    <p>Нажимай на пэды или клавиши Q-W-E / A-S-D</p>
+    <p>Кликай по пэдам, чистый звук + визуализатор</p>
+
+    <canvas id="visualizer" width="330" height="100"></canvas>
 
     <div class="pad-container">
-        <div class="pad" data-note="261.63"></div> <!-- C4 -->
-        <div class="pad" data-note="293.66"></div> <!-- D4 -->
-        <div class="pad" data-note="329.63"></div> <!-- E4 -->
-        <div class="pad" data-note="349.23"></div> <!-- F4 -->
-        <div class="pad" data-note="392.00"></div> <!-- G4 -->
-        <div class="pad" data-note="440.00"></div> <!-- A4 -->
+        <div class="pad" data-note="261.63"></div>
+        <div class="pad" data-note="293.66"></div>
+        <div class="pad" data-note="329.63"></div>
+        <div class="pad" data-note="349.23"></div>
+        <div class="pad" data-note="392.00"></div>
+        <div class="pad" data-note="440.00"></div>
     </div>
 
     <script src="app.js"></script>
