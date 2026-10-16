@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Audio Synth Vibe</title>
+    <style>
+        body {
+            margin: 0;
+            background: #0d0f18;
+            color: #00ffcc;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            text-shadow: 0 0 10px rgba(0,255,204,0.5);
+            margin-bottom: 10px;
+        }
+        p {
+            color: #8892b0;
+            margin-bottom: 30px;
+        }
+        .pad-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 15px;
+        }
+        .pad {
+            height: 100px;
+            background: #171b2c;
+            border: 2px solid #00ffcc;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 0 0 15px rgba(0,255,204,0.1);
+        }
+        .pad:hover {
+            background: #1f253d;
+            box-shadow: 0 0 25px rgba(0,255,204,0.4);
+        }
+        .pad:active, .pad.active {
+            background: #00ffcc;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NEON SYNTH LAB</h1>
+    <p>Нажимай на пэды или клавиши Q-W-E / A-S-D</p>
+
+    <div class="pad-container">
+        <div class="pad" data-note="261.63"></div> <!-- C4 -->
+        <div class="pad" data-note="293.66"></div> <!-- D4 -->
+        <div class="pad" data-note="329.63"></div> <!-- E4 -->
+        <div class="pad" data-note="349.23"></div> <!-- F4 -->
+        <div class="pad" data-note="392.00"></div> <!-- G4 -->
+        <div class="pad" data-note="440.00"></div> <!-- A4 -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
